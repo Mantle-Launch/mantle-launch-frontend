@@ -747,24 +747,25 @@ export default function TokenLock() {
                       }}
                     />
                   </GridItem>
-                  <GridItem xs={12} sm={12} md={5}>
-                    <Label>
-                      Input time
-                      <TextField
-                        id="idlocktime"
-                        // label="Unlock time"
-                        disabled={lock_flag}
-                        type="datetime-local"
-                        defaultValue={new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)
-                          .toISOString()
-                          .slice(0, 16)}
-                        sx={{ width: 215 }}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      />
-                    </Label>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Label>Input time</Label>
+                    <TextField
+                      id="idlocktime"
+                      // label="Unlock time"
+                      disabled={lock_flag}
+                      type="datetime-local"
+                      defaultValue={new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)
+                        .toISOString()
+                        .slice(0, 16)}
+                      // sx={{ width: 215 }}
+                      InputLabelProps={{
+                        shrink: true,
+                        fullWidth: true,
+                      }}
+                    />
                   </GridItem>
+                  <GridItem xs={6} sm={6} md={4}></GridItem>
+
                   <GridItem xs={12} sm={12} md={2}>
                     {/* <CustomInput
                     labelText="Penalty Fee : 50"

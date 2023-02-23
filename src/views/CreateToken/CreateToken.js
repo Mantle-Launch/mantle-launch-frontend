@@ -293,16 +293,34 @@ export default function CreateTokenMain() {
     console.log('info', standard_info);
     //Set Create Fee & Address
     try {
+      //       function createStandard(
+      //     address creator_,
+      //     string memory name_,
+      //     string memory symbol_,
+      //     uint8 decimals_,
+      //     uint256 tokenSupply_,
+      //     SharedStructs.status memory _state
+      // )
+      //       struct status {
+      //     uint256 mintflag;
+      //     uint256 pauseflag;
+      //     uint256 burnflag;
+      //     uint256 blacklistflag;
+      // }
+      const status = {
+        mintflag: parseInt(standard_info.mint),
+        pauseflag: parseInt(standard_info.pause),
+        burnflag: parseInt(standard_info.burn),
+        blacklistflag: parseInt(standard_info.blacklist),
+      };
+
       await manage_contract.createStandard(
         standard_info.owner,
         standard_info.name,
         standard_info.symbol,
         parseInt(standard_info.decimal),
-        ethers.utils.parseUnits(standard_info.totalsupply.toString(), standard_info.decimal.toString()),
-        parseInt(standard_info.mint),
-        parseInt(standard_info.burn),
-        parseInt(standard_info.pause),
-        parseInt(standard_info.blacklist),
+        ethers.utils.parseUnits(standard_info.totalsupply.toString()),
+        status,
         overrid
       );
 

@@ -28,6 +28,7 @@
     "coin-address-validator": "1.0.4-1",
     "ethers": "^5.4.6",
     "history": "5.0.0",
+    "http-server": "^14.1.1",
     "js-sha3": "0.8.0",
     "lint": "^1.1.2",
     "perfect-scrollbar": "1.5.1",

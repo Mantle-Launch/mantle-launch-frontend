@@ -1,21 +1,3 @@
-// import React, { useState } from 'react';
-
-// import data from './data';
-// import Echolist from './Echolist';
-
-// import { Grid } from '@material-ui/core';
-
-// function Echosystem() {
-//   const [projects, setprojects] = useState(data);
-//   return (
-//     <Grid container spacing={2}>
-//       <Echolist projects={projects} />;
-//     </Grid>
-//   );
-// }
-
-// export default Echosystem;
-
 //Default
 import React from 'react';
 
@@ -24,24 +6,23 @@ import GridItem from '../../components/Grid/GridItem.js';
 import GridContainer from '../../components/Grid/GridContainer.js';
 import Card from '../../components/Card/Card.js';
 import CardBody from '../../components/Card/CardBody.js';
-import ComingSoon from '../../assets/img/coming-soon.png';
 
-function Echosystem() {
+function Swap() {
   return (
     <>
       <GridContainer justifyContent="center">
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardBody style={{ color: 'black' }} justifyContent="center">
-              <image src={ComingSoon}></image>
+              {/* <image src={ComingSoon}></image> */}
               <h2>Coming Soon</h2>
 
-              {/* <h5>
+              <h5>
                 Try MSwap Factory Contract : &nbsp;
                 <a href="https://explorer.testnet.mantle.xyz/address/0x74c9edBe1f78De461F78957ceFeCb210849b38BA">
                   0xAD2456e1074A607712Ac27b1793625f80cCB96f5
                 </a>
-              </h5> */}
+              </h5>
             </CardBody>
           </Card>
         </GridItem>
@@ -50,4 +31,4 @@ function Echosystem() {
   );
 }
 
-export default Echosystem;
+export default Swap;

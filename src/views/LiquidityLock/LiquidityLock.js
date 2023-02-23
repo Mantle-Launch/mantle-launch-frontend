@@ -704,7 +704,7 @@ export default function TokenLock() {
               <div>
                 <GridContainer justifyContent="center">
                   <GridItem xs={10} sm={10} md={4}>
-                    <p>Token Balance:</p>
+                    <p styles={{ color: 'black' }}>Token Balance:</p>
                     <Danger>
                       <h3>{tokenbalance}</h3>
                     </Danger>
@@ -733,22 +733,22 @@ export default function TokenLock() {
                     />
                   </GridItem>
                   <GridItem xs={12} sm={12} md={5}>
-                    <Label>
-                      Input time
-                      <TextField
-                        id="idlocktime"
-                        // label="Unlock time"
-                        disabled={lock_flag}
-                        type="datetime-local"
-                        defaultValue={new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)
-                          .toISOString()
-                          .slice(0, 16)}
-                        sx={{ width: 215 }}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      />
-                    </Label>
+                    {/* <Label>Input time</Label> */}
+                    <TextField
+                      id="idlocktime"
+                      // label="Unlock time"
+
+                      disabled={lock_flag}
+                      type="datetime-local"
+                      defaultValue={new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)
+                        .toISOString()
+                        .slice(0, 16)}
+                      // sx={{ width: 300 }}
+                      InputLabelProps={{
+                        // shrink: true,
+                        fullWidth: true,
+                      }}
+                    />
                   </GridItem>
                   <GridItem xs={12} sm={12} md={2}>
                     {/* <CustomInput
