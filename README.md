@@ -1,4 +1,4 @@
-#. ![mental-launch-logo (1)](https://user-images.githubusercontent.com/102347045/220832001-8c9c582d-5687-4ba2-8ee6-d8eb107d3715.png)
+
 
 ![1](https://user-images.githubusercontent.com/102347045/220831774-1f3bcb3f-0b64-42e0-9d4b-84a1e9224ed8.png)
 ![2](https://user-images.githubusercontent.com/102347045/220831786-b19accae-36b6-4d0d-b102-f934bd4c59e8.png)
