@@ -1,6 +1,6 @@
-#. ![mental-launch-logo (1)](https://user-images.githubusercontent.com/102347045/220832001-8c9c582d-5687-4ba2-8ee6-d8eb107d3715.png)
 
-![1](https://user-images.githubusercontent.com/102347045/220831774-1f3bcb3f-0b64-42e0-9d4b-84a1e9224ed8.png)
+
+![1](https://user-images.githubusercontent.com/16322269/220917222-ec1e9652-e42b-47f9-b9d2-88daf095a866.jpg)
 ![2](https://user-images.githubusercontent.com/102347045/220831786-b19accae-36b6-4d0d-b102-f934bd4c59e8.png)
 ![3](https://user-images.githubusercontent.com/102347045/220831789-f033e9bc-86df-4b19-89fa-418a2a383476.png)
 ![4](https://user-images.githubusercontent.com/102347045/220831794-ece1df8a-5387-4471-b7d2-87ccbb62bd9b.png)
