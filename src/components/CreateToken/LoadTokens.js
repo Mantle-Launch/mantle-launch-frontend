@@ -65,14 +65,14 @@ import CardIcon from '../../components/Card/CardIcon.js';
 
 const styles = {
   cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
+    // color: 'rgba(255,255,255,.62)',
     margin: '0',
     fontSize: '14px',
     marginTop: '0',
     marginBottom: '0',
   },
   cardTitleWhite: {
-    color: '#FFFFFF',
+    // color: '#FFFFFF',
     marginTop: '0px',
     minHeight: 'auto',
     fontWeight: '300',
@@ -154,12 +154,12 @@ export default function LoadTokens(props) {
 
   return (
     <Card>
-      {/* <CardHeader color="danger">
-                <h4 className={classes.cardTitleWhite}>Created Tokens</h4>
-                <p className={classes.cardCategoryWhite}>Your created tokens</p>
-            </CardHeader> */}
+      <CardHeader color="danger">
+        <h4 className={classes.cardTitleWhite}>Created Tokens</h4>
+        <p className={classes.cardCategoryWhite}>Your created tokens</p>
+      </CardHeader>
 
-      {/* <Divider textAlign="center"></Divider> */}
+      <Divider textAlign="center"></Divider>
       <GridContainer justifyContent="center">
         <Link href={verifyurl} target="_blank" color="success" underline="hover">
           <Primary>
@@ -172,6 +172,7 @@ export default function LoadTokens(props) {
       <Divider textAlign="center"></Divider>
       <CardBody>
         <GridContainer>
+          
           {tokens.length > 0 &&
             tokens.map((token, index) => {
               // console.log("list item", token);

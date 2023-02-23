@@ -677,13 +677,13 @@ export default function Presale() {
 
     try {
       count = await manage_contract.getCount();
-      // ProgressDlgShow(false, "Getting Count");
-      // ErrorDlgShow(true, );
-      // console.log("count", count);
-      // setPresaleCount(count);
+      ProgressDlgShow(false, 'Getting Count');
+      ErrorDlgShow(true);
+      console.log('count', count);
+      setPresaleCount(count);
       return count;
     } catch (err) {
-      // ProgressDlgShow(false, "Getting Count");
+      ProgressDlgShow(false, 'Getting Count');
       console.log('get count error', err);
       ErrorDlgShow(true, 'Getting Count Error');
       ProgressDlgShow(false, '');

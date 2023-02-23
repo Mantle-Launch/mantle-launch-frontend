@@ -26,7 +26,7 @@ ReactDOM.render(
         <Route path="/manage" component={Manage} />
 
         {/* <Route path="/rtl" component={RTL} /> */}
-        <Redirect from="/" to="/client/TokenLock" />
+        <Redirect from="/" to="/client/home" />
       </Switch>
     </BrowserRouter>
   </Web3ReactProvider>,

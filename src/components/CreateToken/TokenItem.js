@@ -71,7 +71,7 @@ const styles = {
     marginBottom: '0',
   },
   cardTitleWhite: {
-    color: '#FFFFFF',
+    color: '#000',
     marginTop: '0px',
     minHeight: 'auto',
     fontWeight: '300',
@@ -113,14 +113,14 @@ export default function TokenItem(props) {
           Your Balance: <a> {balance}</a>
         </h5>
         <h5>Address:</h5>
-        {address}
+        <p>{address}</p>
         {/* <Info>Pause Fee:</Info><Danger>{feeInfo.pause}</Danger>
                 <Info>Blacklist Fee:</Info><Danger>{feeInfo.blacklist}</Danger>
                 <Info>Deflation Fee:</Info><Danger>{feeInfo.deflation}</Danger> */}
         <p />
         <Divider textAlign="center"></Divider>
         <p />
-        <h5>{type}</h5>
+        <h5> Type : {type}</h5>
 
         <a>{state}</a>
       </CardBody>

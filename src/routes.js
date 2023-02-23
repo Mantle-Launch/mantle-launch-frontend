@@ -1,7 +1,8 @@
-// import Dashboard from '@material-ui/icons/Dashboard';
+import Dashboard from '@material-ui/icons/Dashboard';
 // import LockIcon from '@material-ui/icons/Lock';
 import EcoIcon from '@material-ui/icons/Eco';
-// import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
+import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
+import { RocketLaunch } from '@mui/icons-material';
 // import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 // import TokenTImeLockImg from '../src/assets/img/payroll.png';
@@ -28,11 +29,28 @@ import Contracts from './views/contracts/Contracts';
 import Pool from './views/Pool/Pool';
 import Swap from './views/Swap/Swap.js';
 import Governance from './views/Governance/Governance.js';
+import Home from './views/Home/Home.js';
 // core components/./views for RTL layout
 // import RTLPage from './views/RTLPage/RTLPage.js';
 import { LaunchOutlined, LockOutlined, LockTwoTone, MoneyOutlined } from '@material-ui/icons';
 
 const dashboardRoutes = [
+  {
+    path: '/home',
+    name: 'Dashboard',
+    rtlName: 'لوحة القيادة',
+    icon: Dashboard,
+    component: Home,
+    layout: '/client',
+  },
+  {
+    path: '/createtoken',
+    name: 'Tocken Factory',
+    rtlName: 'لوحة القيادة',
+    icon: AddCircleOutlineIcon,
+    component: CreateToken,
+    layout: '/client',
+  },
   {
     path: '/tokenlock',
     name: 'Token Time Lock',
@@ -70,18 +88,11 @@ const dashboardRoutes = [
     path: '/presale',
     name: 'Tocken Launcher',
     rtlName: 'لوحة القيادة',
-    icon: LaunchOutlined,
+    icon: RocketLaunch,
     component: Presale,
     layout: '/client',
   },
-  {
-    path: '/createtoken',
-    name: 'Tocken Factory',
-    rtlName: 'لوحة القيادة',
-    icon: AddCircleOutlineIcon,
-    component: CreateToken,
-    layout: '/client',
-  },
+
   {
     path: '/echosystem',
     name: 'Echosystem',
