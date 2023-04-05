@@ -1,104 +1,44 @@
 //Default
 import React from 'react';
-import { useState, useEffect } from 'react';
-
-//Style
-import { makeStyles } from '@material-ui/core/styles';
-import Loader from '../Loader/Loader.js';
-import CircularProgress from '@mui/material/CircularProgress';
-
-// import Chip from '@mui/material/Chip';
+import { useState } from 'react';
 
 //Group
 import GridItem from '../Grid/GridItem.js';
 import GridContainer from '../Grid/GridContainer.js';
 
 import Card from '../Card/Card.js';
-import CardHeader from '../Card/CardHeader.js';
 import CardBody from '../Card/CardBody.js';
-import CardAvatar from '../Card/CardAvatar.js';
-import CardFooter from '../Card/CardFooter.js';
 
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 
 //Input
 import TextField from '@mui/material/TextField';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import { Label, Input } from 'reactstrap';
-import Radio from '@mui/material/Radio';
 // import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import IconButton from '@mui/material/IconButton';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import Search from '@material-ui/icons/Search';
-import Link from '@mui/material/Link';
 import Switch from '@mui/material/Switch';
 
 //Component
-import CustomInput from '../CustomInput/CustomInput.js';
 import Button from '@mui/material/Button';
 import AlertDialog from '..//AlertDlg/Alert.js';
 import ProgressDlg from '../AlertDlg/ProgressDlg.js';
 
 // import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
-import Table from '../Table/Table.js';
-import CircularProgressWithLabel from '../Progress/CircleProgress.js';
 
 //Color
-import Danger from '../Typography/Danger.js';
-import Success from '../Typography/Success.js';
-import Primary from '../Typography/Primary.js';
 import Info from '../Typography/Info.js';
 
 //Icon
-import ErrorIcon from '@material-ui/icons/Error';
-import GetAppIcon from '@mui/icons-material/GetApp';
-import AddModeratorIcon from '@mui/icons-material/AddModerator';
-import CardIcon from '../../components/Card/CardIcon.js';
 import Checkbox from '@mui/material/Checkbox';
 
 //color
-import { red, pink, purple, deepPurple, indigo, blue, green, lightGreen, deepOrange } from '@mui/material/colors';
+import { red, indigo } from '@mui/material/colors';
 
 //Web3
-import { Contract, ethers, BigNumber as EthersBigNumber } from 'ethers';
 import coinAddressValidator from 'coin-address-validator';
-import isValidAddress from '../AddressValidator.js';
-
-const styles = {
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0',
-  },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none',
-  },
-};
-
-const useStyles = makeStyles(styles);
 
 const col_step1 = red.A400;
-const col_step2 = pink.A100;
-const col_step3 = purple.A400;
-const col_step4 = deepPurple[500];
 const col_step5 = indigo.A200;
-const col_step6 = blue.A200;
-const col_step7 = green.A400;
-const col_step8 = lightGreen.A400;
-const col_step9 = deepPurple.A400;
 
 const standard_info = {
   name: '',
@@ -124,7 +64,6 @@ const deflation_info = {
 };
 
 export default function CreateToken(props) {
-  const classes = useStyles();
 
   const { createStandardToken, createLiqudityToken, changeFeeInfo, user_addr } = props;
 

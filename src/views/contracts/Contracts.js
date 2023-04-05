@@ -1,13 +1,5 @@
 //Default
 import React from 'react';
-
-//Group
-import GridItem from '../../components/Grid/GridItem.js';
-import GridContainer from '../../components/Grid/GridContainer.js';
-
-import Card from '../../components/Card/Card.js';
-import CardBody from '../../components/Card/CardBody.js';
-
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -16,7 +8,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Button } from '@material-ui/core';
 
 const CustomTableCell = withStyles((theme) => ({
   head: {
@@ -54,7 +45,7 @@ const rows = [
     'Token Factory CreateManage: ',
     '0xa25e5394bc021c91f49ebb5ac7da8faed25a78ed',
 
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0xa25E5394Bc021C91F49ebb5AC7dA8faED25a78eD">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0xa25E5394Bc021C91F49ebb5AC7dA8faED25a78eD">
       {' '}
       Explore
     </a>
@@ -62,7 +53,7 @@ const rows = [
   createData(
     'Token Lock: ',
     '0x2839a137ea0b4c29df7e77fc5bed40637eb397f0',
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0x2839a137ea0b4c29df7e77fc5bed40637eb397f0">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0x2839a137ea0b4c29df7e77fc5bed40637eb397f0">
       {' '}
       Explore
     </a>
@@ -70,7 +61,7 @@ const rows = [
   createData(
     'Liquidity Lock: ',
     '0xbc1cf48bcdbd1cf73ee6aace59fcb1a50379b0a7',
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0xbc1cf48bcdbd1cf73ee6aace59fcb1a50379b0a7">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0xbc1cf48bcdbd1cf73ee6aace59fcb1a50379b0a7">
       {' '}
       Explore
     </a>
@@ -78,7 +69,7 @@ const rows = [
   createData(
     'Presale Manage: ',
     '0x74c9edbe1f78de461f78957cefecb210849b38ba',
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0x74c9edbe1f78de461f78957cefecb210849b38ba">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0x74c9edbe1f78de461f78957cefecb210849b38ba">
       {' '}
       Explore
     </a>
@@ -86,7 +77,7 @@ const rows = [
   createData(
     'Lending PoolFactory: ',
     '0xf34c6e22267bc7ddde109a9758450eda62c9d60c',
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0xf34c6e22267bc7ddde109a9758450eda62c9d60c">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0xf34c6e22267bc7ddde109a9758450eda62c9d60c">
       {' '}
       Explore
     </a>
@@ -94,7 +85,7 @@ const rows = [
   createData(
     'Staking PoolFactory: ',
     '0xca6980d554cdf28e7be92e1d39627357e4bbc15a',
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0xca6980d554cdf28e7be92e1d39627357e4bbc15a">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0xca6980d554cdf28e7be92e1d39627357e4bbc15a">
       {' '}
       Explore
     </a>
@@ -102,7 +93,7 @@ const rows = [
   createData(
     'MSwap Factory:  ',
     '0xad2456e1074a607712ac27b1793625f80ccb96f5',
-    <a target={'_blank'} href="https://explorer.testnet.mantle.xyz/address/0xad2456e1074a607712ac27b1793625f80ccb96f5">
+    <a target={'_blank'} rel="noreferrer"  href="https://explorer.testnet.mantle.xyz/address/0xad2456e1074a607712ac27b1793625f80ccb96f5">
       {' '}
       Explore
     </a>

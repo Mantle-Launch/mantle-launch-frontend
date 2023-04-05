@@ -4,8 +4,6 @@ import React from 'react';
 //Group
 import GridItem from '../../components/Grid/GridItem.js';
 import GridContainer from '../../components/Grid/GridContainer.js';
-import Card from '../../components/Card/Card.js';
-import CardBody from '../../components/Card/CardBody.js';
 
 function Home() {
   return (

@@ -1,15 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-
 import { useParams } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import projects from './data';
-
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import Button from '@mui/material/Button';
 import Tab from '@material-ui/core/Tab';
 import TabContext from '@material-ui/lab/TabContext';
@@ -17,23 +14,18 @@ import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-
 //icons
 //import DiscordIcon from '@mui/icons-material/Discord';
 import Twitter from '@material-ui/icons/Twitter';
 import Facebook from '@material-ui/icons/Facebook';
-import Discord from '@material-ui/icons/Android';
 import Share from '@material-ui/icons/ShareRounded';
 import Close from '@material-ui/icons/CloseRounded';
 import PublicIcon from '@mui/icons-material/Public';
 import TelegramIcon from '@mui/icons-material/Telegram';
-import SearchIcon from '@mui/icons-material/Search';
 
 //toggle
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { number } from 'prop-types';
 
 //comments impotrs
 import { CommentSection } from 'react-comments-section';
@@ -105,12 +97,13 @@ const EchoSystemDetails = () => {
   const [thisData, setThisData] = useState('');
 
   useEffect(() => {
-    const currentProject = projects.find((elem) => elem.name == name);
+    const currentProject = projects.find((elem) => elem.name === name);
     console.log(currentProject, 'daoData');
     //
 
     setThisData(currentProject);
     // console.log(thisData.decription);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projects]);
 
   // for tabs
@@ -199,6 +192,7 @@ const EchoSystemDetails = () => {
                         className="socialIconsA"
                         data-show-count="false"
                         target="_blank"
+                        rel="noreferrer" 
                       >
                         <i className="fa-brands fa-discord" aria-hidden="true">
                           <Share />
@@ -328,6 +322,7 @@ const EchoSystemDetails = () => {
                                   src="https://daohq-dao-images.s3.us-east-2.amazonaws.com/images/sHGUQ_0F_400x400.jpg"
                                   height={'20px'}
                                   width={'20px'}
+                                  alt="img"
                                 ></img>
                                 <span style={{ marginLeft: '5px' }}>$0x</span>
                               </div>

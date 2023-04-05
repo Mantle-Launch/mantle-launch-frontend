@@ -1,27 +1,9 @@
 import Dashboard from '@material-ui/icons/Dashboard';
-// import LockIcon from '@material-ui/icons/Lock';
 import EcoIcon from '@material-ui/icons/Eco';
-import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
 import { RocketLaunch } from '@mui/icons-material';
-// import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-// import TokenTImeLockImg from '../src/assets/img/payroll.png';
-
-// core components/views for Admin layout
-// import DashboardPage from './views/Dashboard/Dashboard.js';
-// import UserProfile from './views/UserProfile/UserProfile.js';
-// import TableList from './views/TableList/TableList.js';
-// import Typography from './views/Typography/Typography.js';
-// import Icons from './views/Icons/Icons.js';
-// import Maps from "./views/Maps/Maps.js";
-// import NotificationsPage from './views/Notifications/Notifications.js';
-// import UpgradeToPro from './views/UpgradeToPro/UpgradeToPro.js';
-
 import TokenLock from './views/TokenLock/TokenLock.js';
 import Presale from './views/Presale/Presale.js';
-import LiquidityLock from './views/LiquidityLock/LiquidityLock.js';
-// import Farm from './views/Farm/Farm.js';
-// import Staking from './views/Staking/Staking.js';
 import CreateToken from './views/CreateToken/CreateToken.js';
 import Echosystem from './views/echosystem/Echosystem';
 import EchosystemDetails from './views/echosystem/EchoSystemDetails';
@@ -30,15 +12,13 @@ import Pool from './views/Pool/Pool';
 import Swap from './views/Swap/Swap.js';
 import Governance from './views/Governance/Governance.js';
 import Home from './views/Home/Home.js';
-// core components/./views for RTL layout
-// import RTLPage from './views/RTLPage/RTLPage.js';
-import { LaunchOutlined, LockOutlined, LockTwoTone, MoneyOutlined } from '@material-ui/icons';
+import { LaunchOutlined, LockOutlined, MoneyOutlined } from '@material-ui/icons';
 
 const dashboardRoutes = [
   {
     path: '/home',
     name: 'Dashboard',
-    rtlName: 'لوحة القيادة',
+    rtlName: 'لوحة القيادة',  
     icon: Dashboard,
     component: Home,
     layout: '/client',
@@ -57,14 +37,6 @@ const dashboardRoutes = [
     rtlName: 'التطور للاحترافية',
     icon: LockOutlined,
     component: TokenLock,
-    layout: '/client',
-  },
-  {
-    path: '/liquiditylock',
-    name: 'Liquidity Time Lock',
-    rtlName: 'التطور للاحترافية',
-    icon: LockTwoTone,
-    component: LiquidityLock,
     layout: '/client',
   },
 

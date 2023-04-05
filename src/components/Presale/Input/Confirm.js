@@ -1,68 +1,24 @@
 //Default
 import React from 'react';
-import { useState, useEffect } from 'react';
-
-//Style
-import { makeStyles } from '@material-ui/core/styles';
-import Loader from '../../Loader/Loader.js';
-import CircularProgress from '@mui/material/CircularProgress';
-
+import { useState } from 'react';
 //Group
 import GridItem from '../../Grid/GridItem.js';
 import GridContainer from '../../Grid/GridContainer.js';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-
 //Input
-import TextField from '@mui/material/TextField';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import CustomInput from '../../CustomInput/CustomInput.js';
 import Button from '@mui/material/Button';
-import { Label, Input } from 'reactstrap';
 import Checkbox from '@mui/material/Checkbox';
 
-//Typography
-import Danger from '../../Typography/Danger.js';
-import Success from '../../Typography/Success.js';
-import Primary from '../../Typography/Primary.js';
-import Info from '../../Typography/Info.js';
-
-import { red, pink, purple, deepPurple, indigo, blue, green, lightGreen, deepOrange } from '@mui/material/colors';
-
 //Icon
-import ErrorIcon from '@material-ui/icons/Error';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 
-const styles = {
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0',
-  },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none',
-  },
-};
-
-const useStyles = makeStyles(styles);
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export default function ConfirmDlg(props) {
-  const classes = useStyles();
 
   //Props
   const { movefirststep, movedashboard } = props;
@@ -136,8 +92,9 @@ export default function ConfirmDlg(props) {
       [event.target.name]: event.target.checked,
     });
 
+    // eslint-disable-next-line array-callback-return
     data.map((str) => {
-      if (str.name == event.target.name) {
+      if (str.name === event.target.name) {
         if (!event.target.checked) flag = false;
       } else if (!checkflag[str.name]) {
         flag = false;
@@ -152,6 +109,7 @@ export default function ConfirmDlg(props) {
   };
 
   const checkAll = (event) => {
+    // eslint-disable-next-line array-callback-return
     data.map((str) => {
       // console.log(str.name);
       setCheckFlag((previousInputs) => ({ ...previousInputs, [str.name]: event.target.checked }));

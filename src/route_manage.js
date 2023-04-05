@@ -1,29 +1,10 @@
-import Dashboard from '@material-ui/icons/Dashboard';
 import LockIcon from '@material-ui/icons/Lock';
-import EcoIcon from '@material-ui/icons/Eco';
-import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
-// core components/views for Admin layout
-import DashboardPage from './views/Dashboard/Dashboard.js';
-import UserProfile from './views/UserProfile/UserProfile.js';
-import TableList from './views/TableList/TableList.js';
-import Typography from './views/Typography/Typography.js';
-import Icons from './views/Icons/Icons.js';
-// import Maps from "./views/Maps/Maps.js";
-import NotificationsPage from './views/Notifications/Notifications.js';
-import UpgradeToPro from './views/UpgradeToPro/UpgradeToPro.js';
-
 import TokenLock from './views/TokenLock/TokenLockManage.js';
-import Presale from './views/Presale/Presale.js';
-import LiquidityLock from './views/LiquidityLock/LiquidityLockManage.js';
 import PresaleManage from './views/Presale/PresaleManage.js';
-import Farm from './views/Farm/Farm.js';
-import Staking from './views/Staking/Staking.js';
 import CreateToken from './views/CreateToken/CreateTokenManage.js';
-// core components/./views for RTL layout
-import RTLPage from './views/RTLPage/RTLPage.js';
 
 const dashboardRoutes = [
   {
@@ -34,22 +15,7 @@ const dashboardRoutes = [
     component: TokenLock,
     layout: '/manage',
   },
-  {
-    path: '/liquiditylock',
-    name: 'Liquidity Lock',
-    rtlName: 'التطور للاحترافية',
-    icon: LockIcon,
-    component: LiquidityLock,
-    layout: '/manage',
-  },
-  {
-    path: '/ecosystem',
-    name: 'Mantle Ecosystem',
-    rtlName: 'التطور للاحترافية',
-    icon: LockIcon,
-    component: LiquidityLock,
-    layout: '/client',
-  },
+  
   //   {
   //     path: "/farm",
   //     name: "Farm",

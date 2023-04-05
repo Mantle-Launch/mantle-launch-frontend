@@ -31,6 +31,7 @@
     "http-server": "^14.1.1",
     "js-sha3": "0.8.0",
     "lint": "^1.1.2",
+    "notistack": "^3.0.1",
     "perfect-scrollbar": "1.5.1",
     "prop-types": "15.7.2",
     "react": "17.0.2",

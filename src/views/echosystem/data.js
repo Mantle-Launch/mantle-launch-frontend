@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
     picture: 'https://gateway.rinkeby.boba.network/static/media/Oolongswap.c4b06cf9.webp',
