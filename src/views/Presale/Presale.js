@@ -2,103 +2,74 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-//Style
-import { makeStyles } from '@material-ui/core/styles';
-import Loader from '../../components/Loader/Loader.js';
-import CircularProgress from '@mui/material/CircularProgress';
 
 //Group
 import GridItem from '../../components/Grid/GridItem.js';
 import GridContainer from '../../components/Grid/GridContainer.js';
 
 import Card from '../../components/Card/Card.js';
-import CardHeader from '../../components/Card/CardHeader.js';
 import CardBody from '../../components/Card/CardBody.js';
-import CardAvatar from '../../components/Card/CardAvatar.js';
-import CardFooter from '../../components/Card/CardFooter.js';
 
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 
 //Input
-import TextField from '@mui/material/TextField';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import { Label, Input } from 'reactstrap';
 import Button from '@mui/material/Button';
 
 //Component
-import CustomInput from '../../components/CustomInput/CustomInput.js';
 import InputPresaleInfo from '../../components/Presale/Input/InputPresaleInfo.js';
 import ConfirmDlg from '../../components/Presale/Input/Confirm.js';
-import Divider from '@mui/material/Divider';
 import AlertDialog from '../../components/AlertDlg/Alert.js';
 import ProgressDlg from '../../components/AlertDlg/ProgressDlg.js';
 import PresaleList from '../../components/Presale/Market/PresaleList.js';
 import PersonalPresale from '../../components/Presale/Market/PersonalPresale.js';
 
-//Color
-import Danger from '../../components/Typography/Danger.js';
-import Success from '../../components/Typography/Success.js';
-import Primary from '../../components/Typography/Primary.js';
-import Info from '../../components/Typography/Info.js';
-
 //Icon
-import ErrorIcon from '@material-ui/icons/Error';
-import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 //Web3 Interface
-import Web3 from 'web3';
 import { useWeb3React } from '@web3-react/core';
-import { Contract, ethers, BigNumber as EthersBigNumber } from 'ethers';
+import { Contract, ethers } from 'ethers';
 import coinAddressValidator from 'coin-address-validator';
-import { hexZeroPad } from '@ethersproject/bytes';
-import BigNumber from 'bignumber.js';
-import { utils } from 'ethers';
 
 import { getDefaultProvider } from '../../components/WalletConnector.js';
-import isValidAddress from '../../components/AddressValidator.js';
 
 //Constant ABI
 import { STANDARD_TOKEN_ABI } from '../../Config/config.js';
-import { TOKEN_LOCK_ABI } from '../../Config/config.js';
 import { PRESALE_ABI } from '../../Config/config.js';
 
 //Constant Address
 import { PRESALE_MANAGE_ADDRESS } from '../../Config/config.js';
-import { listClasses } from '@mui/material';
-import { LocalConvenienceStoreOutlined } from '@material-ui/icons';
 
-const styles = {
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0',
-  },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none',
-  },
-};
+// const styles = {
+//   cardCategoryWhite: {
+//     color: 'rgba(255,255,255,.62)',
+//     margin: '0',
+//     fontSize: '14px',
+//     marginTop: '0',
+//     marginBottom: '0',
+//   },
+//   cardTitleWhite: {
+//     color: '#FFFFFF',
+//     marginTop: '0px',
+//     minHeight: 'auto',
+//     fontWeight: '300',
+//     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+//     marginBottom: '3px',
+//     textDecoration: 'none',
+//   },
+// };
 
-const useStyles = makeStyles(styles);
+// const useStyles = makeStyles(styles);
 
 let managecontractAddr = PRESALE_MANAGE_ADDRESS.bsc; //Metamask
 
+// eslint-disable-next-line no-unused-vars
 let tokenaddr;
 let loadflag = false;
 let filter_count_global = 0;
 
 export default function Presale() {
-  const classes = useStyles();
 
   //State Var
 
@@ -214,6 +185,7 @@ export default function Presale() {
     } else {
       getPresales();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const connectContract = async (tokenabi, tokenaddr) => {
@@ -366,55 +338,55 @@ export default function Presale() {
     }
   };
 
-  const CreateLockforwarderContract = async () => {
-    let manage_contract;
-    let lock_contract;
-    let lock_contract_addr;
+  // const CreateLockforwarderContract = async () => {
+  //   let manage_contract;
+  //   let lock_contract;
+  //   let lock_contract_addr;
 
-    if (!library || !account) {
-      ErrorDlgShow(true, 'Wallet is unconnected');
-      return null;
-    }
+  //   if (!library || !account) {
+  //     ErrorDlgShow(true, 'Wallet is unconnected');
+  //     return null;
+  //   }
 
-    manage_contract = await CreateManageContract();
+  //   manage_contract = await CreateManageContract();
 
-    if (!manage_contract) {
-      ErrorDlgShow(true, 'Manage Contract Create Error');
-      ProgressDlgShow(false, '');
-      return;
-    }
+  //   if (!manage_contract) {
+  //     ErrorDlgShow(true, 'Manage Contract Create Error');
+  //     ProgressDlgShow(false, '');
+  //     return;
+  //   }
 
-    try {
-      lock_contract_addr = await manage_contract.presale_setting_addr();
-      lock_contract = connectContract(PRESALE_ABI.lockforwarder, lock_contract_addr);
-    } catch (err) {
-      // console.log('Lock token error');
-      ErrorDlgShow(true, 'Lockforder contract connect error');
-      ProgressDlgShow(false, '');
-      return;
-      // console.log(err);
-    }
+  //   try {
+  //     lock_contract_addr = await manage_contract.presale_setting_addr();
+  //     lock_contract = connectContract(PRESALE_ABI.lockforwarder, lock_contract_addr);
+  //   } catch (err) {
+  //     // console.log('Lock token error');
+  //     ErrorDlgShow(true, 'Lockforder contract connect error');
+  //     ProgressDlgShow(false, '');
+  //     return;
+  //     // console.log(err);
+  //   }
 
-    if (!lock_contract) {
-      ErrorDlgShow(true, 'Lockforwarder Contract Connect Error');
-      ProgressDlgShow(false, '');
-      return;
-    }
+  //   if (!lock_contract) {
+  //     ErrorDlgShow(true, 'Lockforwarder Contract Connect Error');
+  //     ProgressDlgShow(false, '');
+  //     return;
+  //   }
 
-    let signer = library.getSigner();
+  //   let signer = library.getSigner();
 
-    if (signer) {
-      try {
-        lock_contract = lock_contract.connect(signer);
-        return lock_contract;
-      } catch (error) {
-        ErrorDlgShow(true, 'Lockforwarder Contract Signer connect error');
-        ProgressDlgShow(false, '');
-      }
-    } else {
-      return null;
-    }
-  };
+  //   if (signer) {
+  //     try {
+  //       lock_contract = lock_contract.connect(signer);
+  //       return lock_contract;
+  //     } catch (error) {
+  //       ErrorDlgShow(true, 'Lockforwarder Contract Signer connect error');
+  //       ProgressDlgShow(false, '');
+  //     }
+  //   } else {
+  //     return null;
+  //   }
+  // };
 
   const CreatePresaleContract = async (address) => {
     let presale_contract;
@@ -540,36 +512,36 @@ export default function Presale() {
     getStandardTokenBalance(address);
   };
 
-  const getPair = async (tokenaddress) => {
-    let lock_contract;
+  // const getPair = async (tokenaddress) => {
+  //   let lock_contract;
 
-    if (!account) {
-      ErrorDlgShow(true, 'Wallet is unconnected');
-      ProgressDlgShow(false, '');
-      return;
-    }
+  //   if (!account) {
+  //     ErrorDlgShow(true, 'Wallet is unconnected');
+  //     ProgressDlgShow(false, '');
+  //     return;
+  //   }
 
-    lock_contract = await CreateLockforwarderContract();
+  //   lock_contract = await CreateLockforwarderContract();
 
-    if (!lock_contract) {
-      ErrorDlgShow(true, 'Lockforwarder contract connect error');
-      ProgressDlgShow(false, '');
-      return;
-    }
+  //   if (!lock_contract) {
+  //     ErrorDlgShow(true, 'Lockforwarder contract connect error');
+  //     ProgressDlgShow(false, '');
+  //     return;
+  //   }
 
-    let pairaddress;
+  //   let pairaddress;
 
-    try {
-      pairaddress = await lock_contract.locked_lp_tokens(tokenaddress);
-      ErrorDlgShow(true, pairaddress);
-      ProgressDlgShow(false, '');
-    } catch (error) {
-      console.log(error);
-      ErrorDlgShow(true, 'Get Pair Address Error');
-      ProgressDlgShow(false, '');
-      return;
-    }
-  };
+  //   try {
+  //     pairaddress = await lock_contract.locked_lp_tokens(tokenaddress);
+  //     ErrorDlgShow(true, pairaddress);
+  //     ProgressDlgShow(false, '');
+  //   } catch (error) {
+  //     console.log(error);
+  //     ErrorDlgShow(true, 'Get Pair Address Error');
+  //     ProgressDlgShow(false, '');
+  //     return;
+  //   }
+  // };
 
   const getFeeInfo = async () => {
     let setting_contract;
@@ -758,7 +730,6 @@ export default function Presale() {
         address: address,
         buyerinfo: buyerinfo,
         tokeninfo,
-        link,
       };
       // console.log("getinfo", tempPresaleInfoArray);
       // console.log(tempPresaleInfoArray);
@@ -927,6 +898,7 @@ export default function Presale() {
       await manage_contract.on('CreatePreslaeSuccess', (presale_address, owner) => {
         // setProgressFlag(false);
         // getStandardTokenBalance(erctokenaddr);
+        // eslint-disable-next-line no-useless-concat
         ErrorDlgShow(true, 'Your Presale Address' + '\n' + presale_address);
         ProgressDlgShow(false, '');
         setSubmitActive(true);
@@ -955,7 +927,7 @@ export default function Presale() {
 
   const DepositAmount = async (address, amount) => {
     let presale_contract;
-    let coinval;
+    // let coinval;
 
     presale_contract = await CreatePresaleContract(address);
 
@@ -995,7 +967,7 @@ export default function Presale() {
 
   const claimToken = async (address) => {
     let presale_contract;
-    let coinval;
+    // let coinval;
 
     ProgressDlgShow(true, 'Claiming');
 
@@ -1037,7 +1009,7 @@ export default function Presale() {
 
   const withdraowCoin = async (address) => {
     let presale_contract;
-    let coinval;
+    // let coinval;
 
     ProgressDlgShow(true, 'Withdrawing');
 
@@ -1078,7 +1050,7 @@ export default function Presale() {
 
   const addLiquidity = async (address, tokenaddress) => {
     let presale_contract;
-    let coinval;
+    // let coinval;
 
     ProgressDlgShow(true, 'Liqudity Locking');
 
@@ -1174,7 +1146,7 @@ export default function Presale() {
   };
 
   const getPersonalData = (index) => {
-    return presale_info.find((element) => element.index == index);
+    return presale_info.find((element) => element.index === index);
   };
 
   const CreateButtonClick = () => {

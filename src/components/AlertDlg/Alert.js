@@ -1,8 +1,7 @@
 //Default
-import React, { useEffect } from "react";
+import React from "react";
 
 //Style
-import { makeStyles } from "@material-ui/core/styles";
 
 //Dialog
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -14,19 +13,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 //Input
 import Button from '@mui/material/Button';
 
-//Link
-import Link from '@mui/material/Link';
-
 //Icon
-import AnnouncementIcon from '@mui/icons-material/Announcement';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-
-import Danger from "../Typography/Danger.js";
-import Success from "../Typography/Success.js";
-import Primary from "../Typography/Primary.js";
-import Info from "../Typography/Info.js";
 
 export default function AlertDialog(props) {
 

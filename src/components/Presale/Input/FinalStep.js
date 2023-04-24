@@ -4,31 +4,17 @@ import { useState, useEffect } from 'react';
 
 //Style
 import { makeStyles } from "@material-ui/core/styles";
-import Loader from "../../Loader/Loader.js";
-import CircularProgress from '@mui/material/CircularProgress';
-import Divider from '@mui/material/Divider';
-
 //Group
 import GridItem from "../../Grid/GridItem.js";
 import GridContainer from "../../Grid/GridContainer.js";
 
-import Box from '@mui/material/Box';
-
 //Input
-import TextField from '@mui/material/TextField';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import CustomInput from "../../CustomInput/CustomInput.js";
 import Button from '@mui/material/Button';
-import { Label, Input } from 'reactstrap';
 
 //Typography
-import Danger from "../../Typography/Danger.js";
-import Success from "../../Typography/Success.js";
-import Primary from "../../Typography/Primary.js";
 import Info from "../../Typography/Info.js";
 
 //Icon
-import ErrorIcon from '@material-ui/icons/Error';
 
 //Dlg
 import AlertDialog from "../../AlertDlg/Alert.js";
@@ -118,6 +104,7 @@ export default function Final(props) {
         } else if(chain === "BNB") {
             setSwapString("PancakeSwap");
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[chain])
 
     const calcAmount = () => {

@@ -1,14 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 //Typography
-import Danger from '../Typography/Danger.js';
-import Success from '../Typography/Success.js';
+
 import Primary from '../Typography/Primary.js';
-import Info from '../Typography/Info.js';
 
 export default function CircularProgressWithLabel(props) {
   return (

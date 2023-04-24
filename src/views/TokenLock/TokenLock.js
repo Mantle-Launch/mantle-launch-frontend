@@ -3,8 +3,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 //Style
-import { makeStyles } from '@material-ui/core/styles';
-import Loader from '../../components/Loader/Loader.js';
 import CircularProgress from '@mui/material/CircularProgress';
 
 //Group
@@ -14,7 +12,6 @@ import GridContainer from '../../components/Grid/GridContainer.js';
 import Card from '../../components/Card/Card.js';
 import CardHeader from '../../components/Card/CardHeader.js';
 import CardBody from '../../components/Card/CardBody.js';
-import CardAvatar from '../../components/Card/CardAvatar.js';
 import CardFooter from '../../components/Card/CardFooter.js';
 
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -26,82 +23,42 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import Box from '@mui/material/Box';
 
 //Icon
-import Close from '@material-ui/icons/Close';
-import Check from '@material-ui/icons/Check';
-import avatar from '../../assets/img/faces/marc.jpg';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import ErrorIcon from '@material-ui/icons/Error';
 import CardIcon from '../../components/Card/CardIcon.js';
-import Warning from '@material-ui/icons/Warning';
-import Icon from '@material-ui/core/Icon';
 import AddAlarmIcon from '@mui/icons-material/AddAlarm';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 
 //Input
 import TextField from '@mui/material/TextField';
-import { Label, Input } from 'reactstrap';
-import InputLabel from '@material-ui/core/InputLabel';
+import { Label } from 'reactstrap';
 import CustomInput from '../../components/CustomInput/CustomInput.js';
 import Button from '../../components/CustomButtons/Button.js';
 
 //Color
 import Danger from '../../components/Typography/Danger.js';
-import Success from '../../components/Typography/Success.js';
 import Primary from '../../components/Typography/Primary.js';
-import Info from '../../components/Typography/Info.js';
 
 //Web3 Interface
-import Web3 from 'web3';
 import { useWeb3React } from '@web3-react/core';
-import { Contract, ethers, BigNumber as EthersBigNumber } from 'ethers';
+import { Contract, ethers } from 'ethers';
 import coinAddressValidator from 'coin-address-validator';
-import { hexZeroPad } from '@ethersproject/bytes';
-import BigNumber from 'bignumber.js';
-import { utils } from 'ethers';
 
 import { getDefaultProvider } from '../../components/WalletConnector.js';
-import isValidAddress from '../../components/AddressValidator.js';
 
 //Constant
 import { TOKENLOCK_ADDRESS } from '../../Config/config.js';
 import { STANDARD_TOKEN_ABI } from '../../Config/config.js';
 import { TOKEN_LOCK_ABI } from '../../Config/config.js';
 
-import { AutoScaleAxis } from 'chartist';
 
 let contractAddr = TOKENLOCK_ADDRESS.mantleTestnet; //Metamask
 // const contractAddr = '0xE6D2B6D7AD8956AF24e4d890574F1F42ebcfC4f9';//BSC
 
-const styles = {
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0',
-  },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none',
-  },
-};
-
-const useStyles = makeStyles(styles);
 let erctokenaddr;
-let decimals, balance, available, lockedamount, accountbalance;
+let decimals, balance, available, accountbalance;
 
 export default function TokenLock() {
-  const classes = useStyles();
   const [tokenbalance, setTokenBalance] = useState('0');
-  // const [lockamount, setLockAmount] = useState(0);
-  // const [locktime, setLockTime] = useState(0);
-  // const [penaltyfee, setPenaltyFee] = useState(0);
   const [lockallowance, setLockallowance] = useState('0');
   const [tokenlockedamount, setLockedAmount] = useState('0');
   const [progressflag, setProgressFlag] = useState(false);
@@ -110,7 +67,6 @@ export default function TokenLock() {
   const [tokenstaddr, setTokenStAddr] = useState('');
   const [errlabel, setErrLabel] = useState('Error! Some problems happend. You should fix error.');
 
-  const [open, setOpen] = React.useState(false);
   const [opendis, setDigOpen] = React.useState(false);
 
   const [price, setPrice] = React.useState('0');
@@ -133,6 +89,7 @@ export default function TokenLock() {
       return;
     }
     getPrice();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account, library]);
 
   useEffect(() => {
@@ -233,10 +190,10 @@ export default function TokenLock() {
     }
 
     //Ropsten
-    if (library._network.chainId == 3) {
+    if (library._network.chainId === 3) {
       // console.log("ethereum chain id")
       contractAddr = TOKENLOCK_ADDRESS.eth;
-    } else if (library._network.chainId == 97) {
+    } else if (library._network.chainId === 97) {
       // console.log("bsc chain id")
       contractAddr = TOKENLOCK_ADDRESS.bsc;
     } else if (library._network.chainId === 28) {
@@ -256,9 +213,7 @@ export default function TokenLock() {
     try {
       tempcontract = new Contract(tokenaddr, tokenabi, provider);
     } catch (error) {
-      // console.log("Contract new Error")
       setErrLabel('Contract connect error');
-      // console.log(error)
       return null;
     }
 
@@ -329,7 +284,6 @@ export default function TokenLock() {
 
   const getPrice = async () => {
     let lock;
-    let res;
     if (!account) {
       return;
     }
@@ -496,14 +450,13 @@ export default function TokenLock() {
   };
 
   const approveToken = async () => {
-    let tokenContract;
 
     setProgressFlag(true);
     setErroShow(false);
 
     let amount = document.getElementById('idamount').value;
     // console.log(amount.toString());
-    let erc, lock;
+    let erc;
 
     if (!checkvalidate(amount)) {
       return;
@@ -660,22 +613,6 @@ export default function TokenLock() {
       setErroShow(true);
       return;
     }
-  };
-
-  const claimtokenfees = async (address) => {
-    // try {
-    //   await lockconractaddr.claimTokenFees(address);
-    // } catch (err) {
-    //   // console.log('claimToken fees error');
-    //   return;
-    //   // console.log(err);
-    // }
-  };
-
-  const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
-
-  const handleChange = (newValue) => {
-    setValue(newValue);
   };
 
   return (

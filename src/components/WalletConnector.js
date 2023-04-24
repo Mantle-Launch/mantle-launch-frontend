@@ -1,4 +1,6 @@
-import { useState, useCallback, useEffect } from 'react';
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-unused-vars */
+import { useState, useCallback } from 'react';
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core';
 import {
   InjectedConnector,
@@ -161,6 +163,7 @@ export function useWalletConnector() {
     loginWallet(bsc);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const loginWallet = useCallback((connector) => {
     // console.log("login wallet")
     // console.log("connector", connector)

@@ -2,9 +2,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 
-//Style
-import { makeStyles } from "@material-ui/core/styles";
-
 //Group
 import GridItem from "../../Grid/GridItem.js";
 import GridContainer from "../../Grid/GridContainer.js";
@@ -13,44 +10,18 @@ import Box from '@mui/material/Box';
 
 //Input
 import TextField from '@mui/material/TextField';
-import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import CustomInput from "../../CustomInput/CustomInput.js";
 import Button from '@mui/material/Button';
-import { Label, Input } from 'reactstrap';
+import { Label } from 'reactstrap';
 
 //Color
 import Danger from "../../Typography/Danger.js";
-import Success from "../../Typography/Success.js";
-import Primary from "../../Typography/Primary.js";
-import Info from "../../Typography/Info.js";
 
 //Icon
 import ErrorIcon from '@material-ui/icons/Error';
 
-const styles = {
-  cardCategoryWhite: {
-    color: "rgba(255,255,255,.62)",
-    margin: "0",
-    fontSize: "14px",
-    marginTop: "0",
-    marginBottom: "0",
-  },
-  cardTitleWhite: {
-    color: "#FFFFFF",
-    marginTop: "0px",
-    minHeight: "auto",
-    fontWeight: "300",
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: "3px",
-    textDecoration: "none",
-  },
-};
-
-const useStyles = makeStyles(styles);
 
 export default function MinMaxCap(props) {
 
-    const classes = useStyles();
 
     //Props
     const { mincap, maxcap, nextstep, prevstep, changestepvalue } = props;
@@ -64,7 +35,7 @@ export default function MinMaxCap(props) {
     useEffect(()=> {
         setPresaleMinCap(mincap);
         setPresaleMaxCap(maxcap);
-    })
+    },[maxcap, mincap])
 
     const errorShow = (flag, label) => {
         setErrorFlag(flag);
